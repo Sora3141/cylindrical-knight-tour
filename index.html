@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KNIGHT TOUR // PRIME</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600&family=Orbitron:wght@500;900&family=Rajdhani:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-hud">
+        <button id="mobile-menu-btn" class="hud-btn">
+            <span class="icon">◆</span>
+        </button>
+        <button id="mobile-undo-btn" class="hud-btn undo">
+            <span class="icon">↺</span>
+        </button>
+    </div>
+
+    <div id="ui-layer">
+        <div class="glass-panel" id="main-panel">
+            <button id="close-menu-btn" class="close-btn">×</button>
+
+            <header>
+                <div class="logo-glitch" data-text="KNIGHT TOUR">KNIGHT TOUR</div>
+                <div class="subtitle">SPATIAL LOGIC ENGINE v2.1</div>
+            </header>
+
+            <div class="control-grid">
+                <div class="slider-group">
+                    <label>DIMENSION <span class="dim-axis">N</span> <span id="valN" class="val">4</span></label>
+                    <div class="range-wrapper"><input type="range" id="inN" value="8" min="1" max="16" step="1"></div>
+                </div>
+                <div class="slider-group">
+                    <label>DIMENSION <span class="dim-axis">M</span> <span id="valM" class="val">4</span></label>
+                    <div class="range-wrapper"><input type="range" id="inM" value="8" min="1" max="16" step="1"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="btnUndo" class="btn-glass desktop-only">↺ UNDO</button>
+                <button id="btnApply" class="btn-glass primary">◆ REBOOT</button>
+            </div>
+
+            <div class="status-monitor">
+                <div class="monitor-header">SYSTEM_TRACE_LOG</div>
+                <div id="pos-info" class="monitor-text">INITIALIZING...</div>
+                <div class="monitor-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
